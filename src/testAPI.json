@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "title": "Международная конференция Advances in Science and Technology",
+    "url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "location": "БЦ Россия",
+    "data": "14/08/2019",
+    "description": "Lorem ipsum dolor sit amet,consectetur adipisicing elit.Obcaecati amet voluptas 
+    quibusdam eum soluta dolores quis id,eos dolorum reprehenderit distinctio ea 
+    et corrupti aliquam. Adipisci rerum magnam fuga"
+  },
+  {
+    "id": 2,
+    "title": "Международная конференция",
+    "url": "https://images.unsplash.com/photo-1503428593586-e225b39bddfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "location": "БЦ Victory",
+    "data": "7/09/2019",
+    "description": "Деятельность волонтеров направлена на создание программ экологического образования в школах и университетах, организацию практических мероприятий, таких как посадка деревьев в национальных парках, 
+    а также повышение осведомленности об экологических проблемах с помощью средств массовой информации и тренингов."
+  },
+  {
+    "id": 3,
+    "title": "Гендерные аспекты реализации химических конвенций в Кыргызстане",
+    "url": "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "location": "Отель «The Plaza Hotel Bishkek»",
+    "data": "23/10/2019",
+    "description": "Загрязнение воздуха признано основным экологическим риском для здоровья людей во всем мире. Согласно данным Всемирной Организации Здравоохранения ежегодно загрязнение воздуха уносит несколько миллионов жизней по всему миру, подвергает опасности здоровье здоровых людей и ухудшает состояние чувствительных групп, к которым относятся дети, старики, 
+    а также больные респираторными, сердечно-сосудистыми и другими заболеваниями."
+  },
+  {
+    "id": 4,
+    "title": "Гражданский мониторинг качества воздуха в Бишкеке",
+    "url": "http://movegreen.kg/wp-content/uploads/2018/05/air-bishkek-report-rus-1-1080x600.jpg",
+    "location": "AUCA",
+    "data": "15/11/2019",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet voluptas 
+    quibusdam eum soluta dolores quis id,eos dolorum reprehenderit distinctio ea 
+    et corrupti aliquam. Adipisci rerum magnam fuga fugiat?"
+  },
+  {
+    "id": 5,
+    "title": "Человек в современном обществе и государстве: проблемы взаимодействия",
+    "url": "https://mukr.iuk.kg/wp-content/uploads/2019/03/IMG_4441.jpg",
+    "location": "Международный университет Кыргызстана",
+    "data": "29/11/2019",
+    "description": "Воздух – невидимый природный ресурс. Именно с глотка воздуха начинается жизнь каждого человека и животных. В минуту мы, взрослые люди, в обычном состоянии делаем около 12-18 вдохов и потребляем 7-8 литров, что в день составит около 21 600 вдохов или 11 000 литров. Качество воздуха жизненно важно для здоровья людей, в связи с чем в каждой стране при оценке состояния окружающей среды, а также для определения 
+    ее благоприятности, используются санитарно-гигиенические нормативы."
+  }
+]
