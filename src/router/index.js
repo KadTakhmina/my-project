@@ -7,6 +7,7 @@ import IncomePage from '@/pages/IncomePage.vue'
 import CategoryPage from '@/pages/CategoryPage.vue'
 import About from '@/pages/About.vue'
 import Contacts from '@/pages/Contacts.vue'
+import UserPage from '@/pages/UserPage.vue'
 
 
 
@@ -61,6 +62,13 @@ export default new Router({
     path: '/Contacts',
     name: 'Contacts',
     component: Contacts
+
+  } ,
+  {
+
+    path: '/UserPage',
+    name: 'UserPage',
+    component: UserPage
 
   } 
 ]

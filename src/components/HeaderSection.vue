@@ -22,7 +22,9 @@
            <router-link class = "link" to="/Contacts">
              <li>Контакты</li>
            </router-link>
-           <li>Войти</li> 
+           <router-link class = "link" to="/UserPage">
+             <li>Личный кабинет</li> 
+           </router-link>
         </ul>
         
       </div>

@@ -52,5 +52,4 @@ input[type="search"]::-webkit-input-placeholder {
   color: #DCDCDC;
   font-size: 1.6em;
 }
-
 </style>

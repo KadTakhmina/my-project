@@ -7,6 +7,8 @@
           <p>Тема:<span class="variable">{{event.title}}</span></p>
           <p>Место:<span class="variable">{{event.location}}</span></p>
           <p>Дата:<span class="variable">{{event.data}}</span></p>
+          <p>Вход:<span class="variable">Свободный</span></p>
+          <button class="add" @click="done()">Добавить</button>
         </div>
         <div class="detail-block">
           <p>{{event.description}}</p>
@@ -28,6 +30,13 @@
       return {
         events: []
       }
+    },
+    methods: {
+      
+      done: function() {
+        
+      }
+
     },
     mounted() {
       axios.get('https://api.myjson.com/bins/m4c23').then((response) => {
@@ -66,7 +75,7 @@
   .event-info {
     width: 55%;
     color:#053603;
-    margin-top: 2em;
+    margin-top: 1em;
     
   }
   .variable {
@@ -93,6 +102,17 @@
   .event-card:hover .detail-block {
     display: block;
 
+  }
+  .add {
+    /* float: right; */
+    background-color: #008000;
+    border: none;
+    color: #C4C3C0;
+    border-radius: 1em;
+    height: 2em;
+    width: 6em;
+    font-family: 'Neucha', cursive;
+    
   }
 
 </style>
