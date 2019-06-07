@@ -1,6 +1,6 @@
 <template>
   <div class = "About">
-     <HeaderSection/>
+     <Header/>
      <div class="about-content">
        <div class="container">
          <h1 class="about-head">О нас</h1>
@@ -22,13 +22,13 @@
 
 <script>
 
-import HeaderSection from '../components/HeaderSection.vue'
+import Header from '../components/Header.vue'
 
 
 export default {
   name: 'About',
   components: {
-    HeaderSection
+    Header
   }
 }
 </script>

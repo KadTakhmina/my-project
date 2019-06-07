@@ -1,6 +1,6 @@
 <template>
   <div class = "Contacts">
-     <HeaderSection/>
+     <Header/>
      <div class="contact-content">
        <div class="container">
           <img class="contacts-img" src="../img/bg/contacts.png" alt="">
@@ -25,13 +25,13 @@
 
 <script>
 
-import HeaderSection from '../components/HeaderSection.vue'
+import Header from '../components/Header.vue'
 
 
 export default {
   name: 'Contacts',
   components: {
-    HeaderSection
+    Header
   }
 }
 </script>

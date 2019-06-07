@@ -1,20 +1,20 @@
 <template>
   <div class = "category-page">
-     <HeaderSection/>
+     <Header/>
      <CategorySection/>   
   </div>
 </template>
 
 <script>
 
-import HeaderSection from '../components/HeaderSection.vue'
+import Header from '../components/Header.vue'
 import CategorySection from '../components/CategorySection.vue'
 
 
 export default {
   name: 'CategoryPage',
   components: {
-    HeaderSection,
+    Header,
     CategorySection
   }
 }

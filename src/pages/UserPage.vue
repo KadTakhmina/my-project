@@ -1,6 +1,6 @@
 <template>
   <div class = "user-page">
-     <HeaderSection/>
+     <Header/>
      <div class="user-content">
         <div class="container flex-bg">
           <div class="my-event">
@@ -14,7 +14,7 @@
               <input type="date" class="event-form"/>
               <div>
                 <label for="list">Тип:</label>
-                <select name="list" class="">
+                <select name="list" class="list">
                   <option>Выберите из списка</option>
                   <option>Выставка</option>
                   <option>Конференция</option>
@@ -42,9 +42,9 @@
               </div>
               <div>
                 <label for="desc" >Описание:</label>
-                <textarea  type="text" name="desc"/>
+                <textarea class="descr" type="text" name="desc"/>
               </div>
-              <button>Добавить</button>
+              <button class="button">Добавить</button>
             </form>
           </div>
         </div>
@@ -57,12 +57,12 @@
 
 <script>
 
-import HeaderSection from '../components/HeaderSection.vue'
+import Header from '../components/Header.vue'
 
 export default {
   name: 'UserPage',
   components: {
-    HeaderSection
+    Header
   }
 }
 </script>
@@ -89,7 +89,7 @@ export default {
   .add-event {
     height: 38em;
     width: 27em;
-    background-image: url("../img/bg/tip.png");
+    background-image: url("../img/bg/contacts.png");
     background-size: cover;
   }
   .event-heading {
@@ -103,17 +103,44 @@ export default {
     width: 10em;
     margin-left: 7em;
     background-color: #C4C3C0;
+    color: #6B8E23;
   }
   .event-form {
-    width: 15em;
+    width: 18em;
     border: none;
     background-color: #C4C3C0;
+    color: #6B8E23;
   }
   label {
     width: 7em;
     padding: 1em;
     padding-left: 2em;
+    color: #F8FAF8;
     
   }
+  .list {
+    background-color:#C4C3C0;
+    width: 18em;
+    height: 2.5em;
+    /* border: 1px #6B8E23 solid; */
+    border-radius: 0.5em;
+    color: #6B8E23;
+  }
 
+  .descr {
+    background-color:#C4C3C0;
+    width: 18em;
+    border-radius: 0.5em;
+    color: #6B8E23;
+  }
+  .button {
+    border-radius: 0.5em;
+    background-color:#C4C3C0;
+    border: none;
+    height: 2em;
+    float: right;
+    margin-right: 2em;
+    color: #6B8E23;
+
+  }
 </style>

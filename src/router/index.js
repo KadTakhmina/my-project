@@ -1,18 +1,12 @@
-import Vue from "vue";
-import Router from "vue-router";
+import Vue from "vue"
+import Router from "vue-router"
 import HomePage from '@/pages/HomePage.vue'
-import FreePage from '@/pages/FreePage.vue'
-import PaidPage from '@/pages/PaidPage.vue'
-import IncomePage from '@/pages/IncomePage.vue'
 import CategoryPage from '@/pages/CategoryPage.vue'
 import About from '@/pages/About.vue'
 import Contacts from '@/pages/Contacts.vue'
 import UserPage from '@/pages/UserPage.vue'
 
-
-
-
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [ {
@@ -20,27 +14,6 @@ export default new Router({
     path: '/HomePage',
     name: 'HomePage',
     component: HomePage
-
-  } ,
-  {
-
-    path: '/FreePage',
-    name: 'FreePage',
-    component: FreePage
-
-  } ,
-  {
-
-    path: '/PaidPage',
-    name: 'PaidPage',
-    component: PaidPage
-
-  } ,
-  {
-
-    path: '/IncomePage',
-    name: 'IncomePage',
-    component: IncomePage
 
   } ,
   {
