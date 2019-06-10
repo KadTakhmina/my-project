@@ -5,6 +5,8 @@ import CategoryPage from '@/pages/CategoryPage.vue'
 import About from '@/pages/About.vue'
 import Contacts from '@/pages/Contacts.vue'
 import UserPage from '@/pages/UserPage.vue'
+import LoginPage from '@/pages/LoginPage.vue'
+
 
 Vue.use(Router)
 
@@ -43,6 +45,14 @@ export default new Router({
     name: 'UserPage',
     component: UserPage
 
+  } ,
+  {
+
+    path: '/LoginPage',
+    name: 'LoginPage',
+    component: LoginPage
+
   } 
+  
 ]
 })

@@ -10,7 +10,8 @@
      <div class="four">
        <div class="outer">
          <div class="inner">
-           <p>test</p>
+           <p>Пойдем на <span>КОНЦЕРТ?</span></p>
+           
          </div>
        </div>
      </div>
@@ -19,7 +20,7 @@
      <div class="seven">
        <div class="outer-one">
          <div class="inner-one">
-           <p>test</p>
+           <p>О нас</p>
          </div>
        </div>
      </div>
@@ -143,7 +144,7 @@ export default {
   bottom:0;
   right:0;
   top:0;
-  background:rgba(221, 219, 219, 0.9);
+  background:rgba(221, 219, 219, 0.8);
   padding: 15px;
   display: none;
   color: #A9A9A9;
@@ -171,6 +172,7 @@ export default {
   width: 11.4em;
   height: 12.3em;
   border: 1px solid #696969;
+  text-align: center;
     
 }
 .outer-one {
@@ -179,15 +181,28 @@ export default {
   margin-top: 3.8em;
   margin-left: 1.8em;
   padding: 0.3em;
-  background-color: #D3D3D3;
-  opacity: 0.4;
+  background:rgba(221, 219, 219, 0.5);
 }
 .inner-one {
   width: 9.4em;
   height: 5.3em;
   border: 1px solid #696969;
+  text-align: center;
     
 }
+.inner p {
+  font-size: 1.3em;
+  padding-top: 2em;
+  letter-spacing: 0.1em;
+}
+.inner span {
+  font-size: 1.5em;
+  letter-spacing: 0;
+}
+.inner-one p {
+  font-size: 2em;
+  color: #8B0000;
 
+}
   
 </style>

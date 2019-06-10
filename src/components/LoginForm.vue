@@ -1,100 +1,133 @@
 <template>
-     <div class="dropdown ">
-          <a class="user"><i class="fas fa-user-secret" style="color:#DCDCDC"></i></a>
-          <div class="dropdown-content" >
-            <b-span  @click="$bvModal.show('modal-scoped')" class="log">Войти</b-span>
-            <b-modal id="modal-scoped" title="Вход">
-              <form >
-                <input required v-model="username" type="text" placeholder="Имя пользователя" class="user-input"/>
-                <input required v-model="password" type="password" placeholder="Пароль" class="user-input"/>
-              </form>
-              <template slot="modal-footer" slot-scope="{ ok, cancel}">
-                <b-button class="btn" size="sm" variant="success" @click="ok()">
-                  Войти
-                </b-button>
-                <b-button size="sm" variant="danger" @click="cancel()">
-                  Отмена
-                </b-button>
-              </template>
-            </b-modal>
-            <b-span v-b-modal.modal-multi-1 class="log">Регистрация</b-span>
-            <b-modal id="modal-multi-1" title="Регистрация" ok-only no-stacking>
-              <input required v-model="username" type="text" placeholder="Имя пользователя" class="user-input name"/>
-              <input required v-model="username" type="email" placeholder="E-mail" class="user-input"/>
-              <input required v-model="password" type="number" placeholder="Номер телефона" class="user-input"/>
-              <input required v-model="password" type="password" placeholder="Пароль" class="user-input"/>
-            </b-modal>
-          </div>
-        </div>
+  <div class="login-content">
+    <div class="login-box">
+      <transition name="login">
+        <Login v-if="displayLogin"/>
+      </transition>
+      <transition name="signin">
+        <Signin v-if="displaySignin"/>
+      </transition>
+      <div class="flex-login">
+        <h3 @click="showLogin()">Вход</h3>
+        <h3>|</h3>
+        <h3 @click="showSignin()" class="sign">Регистрация</h3>
+      </div>
+      
+    </div>
+  </div>
 </template>
 
 <script>
+import Login from "../components/Login.vue";
+import Signin from "../components/Signin.vue";
+
   export default {
     name: "LoginForm",
-    // data: {
-    //   user: [
-    //     {
-    //       name: "",
-    //       email: "",
-    //       password: ""
-    //     }
-    //   ]
-    // },
-    
-    // methods: {
-    //   newUser: function(){
-        
-    //   }
-      
-    // },
-    
+    components: {
+    Login,
+    Signin
+  },
+  data() {
+    return {
+      displayLogin: true,
+      displaySignin: false
+    };
+  },
+  methods: {
+    showLogin() {
+      this.displayLogin = true;
+      this.displaySignin = false;
+    },
+    showSignin() {
+      this.displayLogin = false;
+      this.displaySignin = true;
+    },
+  }
   }
  
   
 </script>
 
 <style>
+.login-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 40em;
+  background-image: url("../images/homepage/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  z-index: -20em;
+}
+.login-box {
+  height: 25em;
+  width: 50%;
+  background-color: rgba(221, 219, 219, 0.8);
+  position: fixed;
+  top: 15%;
+  left: 25%;
+}
+.flex-login {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+.flex-login h3 {
+  margin-right: 0.4em;
+  color: #8B0000;
+  font-family: 'Neucha', cursive;
+}
+.flex-login h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.go {
+  background-color: #8B0000;
+  border: none;
+  height: 2.5em;
+  color: #D3D3D3;
+  width: 8em;
+}
+.cancel {
+  background-color: #D3D3D3;
+  border: none;
+  height: 2.5em;
+  color: #8B0000;
+  width: 8em;
+  margin-left: 1em;
 
-    #modal-scoped {
-      color: #8FBC8F;
-    }
-    .user {
-    font-size: 1.5em;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+}
+
+/* login style */
+.login-enter {
+  transform: translateX(-200px);
+  opacity: 0;
+}
+.login-enter-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.login-leave-active,
+.login-leave-to {
+  opacity: 0;
+}
+
+/* signin style */
+.signin-enter {
+  transform: translateX(200px);
+  opacity: 0;
+}
+.signin-enter-to {
+  transform: translateX(0px);
+}
+.signin-enter-active {
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.signin-leave-active,
+.signin-leave-to {
+  opacity: 0;
+}
+
     
-    .user-input {
-      margin-bottom: 1.5em;
-      margin-left: 2em;
-      margin-top: 1em;
-      height: 3.3em;
-    }
-
-    .dropdown-content {
-      border-radius: 1em;
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      right: 0;
-      width: 8em;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .dropdown-content .log {
-      color: #6B8E23;
-      padding: 12px 14px;
-      display: block;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown-content .log:hover {
-      background-color: #ddd;
-      border-radius: 1em;
-    }
     
 </style>

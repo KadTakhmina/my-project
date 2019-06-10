@@ -5,6 +5,7 @@
           <li class="ls free"> 
             <a>БЕСПЛАТНЫЕ</a>
              <ul class="free-dropdown">
+               <i class="fas fa-long-arrow-alt-down arr"></i>
                 <li class="row">
                   <ul class="mega-col">
                     <router-link class = "link" to="/CategoryPage">
@@ -26,6 +27,7 @@
                 </li>
               </ul>        
             </li>
+            <li class="slash">|</li>
           <li class="ls paid">
             <a>ПЛАТНЫЕ</a>
             <ul class="paid-dropdown">
@@ -48,17 +50,28 @@
               </li>
             </ul>     
           </li>
+          <li class="slash">|</li>
           <router-link class = "link" to="/CategoryPage">
-          <li class="ls">БЛИЖАЙШИЕ</li>
+            <li class="ls">БЛИЖАЙШИЕ</li>
+            <li class="slash">|</li>
           </router-link>
         </ul>
           <router-link class = "link" to="/HomePage">
             <p class = "logo">Logo</p>
           </router-link>
         <ul class="header-menu">
-            <li class="ls">О НАС</li>
-            <li class="ls">КОНТАКТЫ</li>
-            <li class="ls">ВОЙТИ</li> 
+            <li class="slash">|</li>
+            <router-link class = "link" to="/About">
+             <li class="ls">О НАС</li>
+            </router-link>
+            <li class="slash">|</li>
+            <router-link class = "link" to="/Contacts">
+             <li class="ls">КОНТАКТЫ</li>
+            </router-link>
+            <li class="slash">|</li>
+            <router-link class = "link" to="/LoginPage">
+             <li class="ls">ВОЙТИ</li> 
+            </router-link>
         </ul>
         
       </div>
@@ -67,17 +80,18 @@
 
 <script>
 
-import LoginForm from '../components/LoginForm.vue'
-
 export default {
-  name: 'Header',
-  components: {
-    LoginForm
-  }
+  name: 'Header'
 }
 </script>
 
 <style>
+.arr {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+  font-size: 1em;
+}
 
 .fixed-header {
   height: 5em;
@@ -94,20 +108,22 @@ export default {
 }
 
 .header-menu {
-  margin-top: 1.3em;
+  margin-top: 0.2em;
   list-style-type: none;
 }
 .header-menu .ls {
   font-family: 'Neucha', cursive;
   font-size: 1em;
   display: inline;
-  padding-right: 2em;
-  color: #D3D3D3;
+  padding-right: 1.3em;
+  color: #D5D3D3;
 }
 .logo {
-  margin-top: 0.2em;
+  margin-top: 0.3em;
   color: #A9A9A9;
   font-size: 2em;
+  padding-right: 0.8em;
+  padding-left: 0.8em;
 }
 .logo:hover {
   text-decoration: none;
@@ -118,7 +134,7 @@ export default {
 .link:hover {
   text-decoration: none;
 }
-.header-menu li:hover {
+.header-menu .ls:hover {
   color:#8B0000;
   cursor: pointer;
 }
@@ -169,6 +185,17 @@ export default {
 .link {
   text-decoration: none;
   color: inherit;
+}
+.slash {
+  display: inline;
+  font-size: 2.5em;
+  padding-top: 0;
+  margin-top: 0;
+  padding-right: 0.7em;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ECE9E9;
+  font-stretch: ultra-condensed;
+
 }
 
 </style>
