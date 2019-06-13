@@ -1,5 +1,5 @@
 <template>
-  <div class = "user-page">
+  <div class = "user-page" >
     <Header/>
     <div class="user-content">
       <div class="user-card-one"></div>
@@ -7,16 +7,18 @@
         <div class="flex-user-event">
           <div class="user-event">
            <h3>Мои мероприятия</h3>
-           <p>Что?</p>
-           <p>Где?</p>
-           <p>Когда?</p>
-          
+           <p v-bind="name" class="welcom">{{username}}, добро пожаловать!</p>
+           <!-- <p v-bind="email" >{{email}}</p> -->
+           <p @mouseover="getEvent()" class="goEvent">Мероприятия:</p>
+             <p v-for="event in myevent" :key="event.id" class="myevent"><span>{{event.data}}:</span>{{event.title}}</p>
+             <!-- <p v-bind="myevent">{{myevent.data}}</p> -->
           </div>
+
           <div class="add-event">
             <h3>Добавить мероприятие</h3>
-            <form style="padding-left: 2em; padding-top:1em">
-              <input type="date" class="event-form"/>
-                <select name="list" class="list event-form">
+            <form style="padding-left: 2em; padding-top:1em" @submit.prevent="newEvent">
+              <input type="date" class="event-form" v-model = "date"/>
+                <select name="list" class="list event-form" v-model = "event">
                   <option>Тип мероприятия</option>
                   <option>Выставка</option>
                   <option>Конференция</option>
@@ -29,12 +31,12 @@
                   <option>Ярмарка</option>
                   <option>Другое</option>
                 </select>
-                <input class="event-form" type="text" name="theme" placeholder="Тема"/> 
-                <input class="event-form" type="text" name="place" placeholder="Место"/>
-                <input class="event-form" type="text" name="entrance" placeholder="Вход"/>
-                <input class="event-form" type="text" name="org" placeholder="Организатор"/>
-                <textarea class="descr event-form" type="text" name="desc" placeholder="Описание"/>
-                <button class="go">Добавить</button>
+                <input class="event-form" type="text" name="theme" placeholder="Тема" v-model = "theme"/> 
+                <input class="event-form" type="text" name="place" placeholder="Место" v-model = "place"/>
+                <input class="event-form" type="text" name="entrance" placeholder="Вход" v-model = "enter"/>
+                <input class="event-form" type="text" name="org" placeholder="Организатор" v-model = "org"/>
+                <textarea class="descr event-form" type="text" name="desc" placeholder="Описание" v-model = "description"/>
+                <button  @click="newEvent()" class="go">Добавить</button>
             </form>
           </div>
         </div>
@@ -55,8 +57,67 @@ export default {
   components: {
     Header,
     Footer
+  },
+  data () {
+    return {
+        date: '',
+        event: 'Тип мероприятия',
+        theme: '',
+        place: '',
+        enter: '',
+        org: '',
+        description: '',
+        events: [],
+        username: '',
+        email: '',
+        myevent: {}
+      }
+  },
+  
+  methods: {
+      newEvent() {
+        this.events.push({
+          'date': this.date,
+          'event': this.event,
+          'theme': this.theme,
+          'place': this.place,
+          'enter': this.enter,
+          'org': this.org,
+          'description': this.description,
+        });
+        let data = JSON.stringify(this.events);
+        localStorage.setItem('events', data);
+        // this.date = '',
+        // this.event = 'Тип мероприятия',
+        // this.theme = '',
+        // this.place = '',
+        // this.enter = '',
+        // this.org = '',
+        // this.description = ''
+    },
+    getEvent() {
+      let events = JSON.parse(localStorage.getItem('EVENTS'))
+      this.myevent = events
+      console.log(this.myevent)
+
+    }
+      
+        
+    },
+    mounted() {
+      let user = JSON.parse(localStorage.getItem('USER')) 
+      this.username = user.name
+      this.email = user.email
+
+      // let events = JSON.parse(localStorage.getItem('EVENTS'))
+      // this.myevent = events
+      // console.log(this.myevent)
+    },
+    
   }
-}
+
+
+
 </script>
   
 <style>
@@ -140,6 +201,27 @@ export default {
   font-family: 'Neucha', cursive;
   font-size: 1.2em;
 }
-
+.welcom {
+  font-family: 'Neucha', cursive;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 1em;
+}
+.goEvent {
+  font-family: 'Neucha', cursive;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: underline;
+}
+.myevent {
+  /* font-family: 'Neucha', cursive; */
+  font-size: 1em;
+}
+.myevent span {
+  font-family: 'Neucha', cursive;
+  padding-right: 1em;
+  color: #8B0000;
+  font-size: 1.2em;
+}
   
 </style>

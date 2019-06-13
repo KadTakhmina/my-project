@@ -18,7 +18,7 @@
             </div>
             <div class="detail-block">
               <p>{{event.description}}</p>
-              <button class="add" @click="done()">Добавить</button>
+              <button class="add" @click="done(event.id)">Добавить</button>
             </div>
           </div>
         </div>
@@ -36,18 +36,22 @@
     name: 'CategorySection',
     data() {
       return {
-        events: []
+        events: [],
+        test: []
       }
     },
     methods: {
       
-      done: function() {
-        
+      done: function(event_id) {
+        let ev = this.events
+        this.test.push(ev[event_id-1])
+        let testUser = localStorage.setItem('EVENTS', JSON.stringify(this.test))
+          
       }
 
     },
     mounted() {
-      axios.get('https://api.myjson.com/bins/m4c23').then((response) => {
+      axios.get('https://api.myjson.com/bins/1fc3q1').then((response) => {
           this.events = response.data
  
     })
@@ -123,6 +127,7 @@
     height: 2em;
     width: 6em;
     font-family: 'Neucha', cursive;
+    float: right;
     
   }
 .container-info {

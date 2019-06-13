@@ -116,7 +116,7 @@ export default {
   font-size: 1em;
   display: inline;
   padding-right: 1.3em;
-  color: #D5D3D3;
+  color: #A9A9A9;
 }
 .logo {
   margin-top: 0.3em;
@@ -190,7 +190,7 @@ export default {
   display: inline;
   font-size: 2.5em;
   padding-top: 0;
-  margin-top: 0;
+  /* margin-top: 0; */
   padding-right: 0.7em;
   font-family: 'Times New Roman', Times, serif;
   color: #ECE9E9;

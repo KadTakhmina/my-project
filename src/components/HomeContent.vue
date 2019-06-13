@@ -3,7 +3,8 @@
      <div class="one"></div>
      <div class="two">
        <div class="test">
-         <h1>test</h1>
+         <p>Окунись в мир </p>
+         <span>классической музыки</span>
        </div>
       </div>
      <div class="three"></div>
@@ -20,7 +21,9 @@
      <div class="seven">
        <div class="outer-one">
          <div class="inner-one">
-           <p>О нас</p>
+           <router-link class = "link" to="/About">
+             <p>О нас</p>
+           </router-link>
          </div>
        </div>
      </div>
@@ -147,7 +150,6 @@ export default {
   background:rgba(221, 219, 219, 0.8);
   padding: 15px;
   display: none;
-  color: #A9A9A9;
   text-align: center;
     /* font-family: 'Neucha', cursive; */
 }
@@ -202,7 +204,20 @@ export default {
 .inner-one p {
   font-size: 2em;
   color: #8B0000;
-
+}
+.test p {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  padding-top: 1.3em;
+  color: rgb(109, 108, 108);
+  font-family: 'Neucha', cursive;
+  
+}
+.test span {
+  font-size: 2.9em;
+  font-family: 'Neucha', cursive;
+  color: rgb(109, 108, 108);
+  letter-spacing: 0.1em;
 }
   
 </style>

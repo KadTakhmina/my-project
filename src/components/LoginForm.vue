@@ -61,11 +61,11 @@ import Signin from "../components/Signin.vue";
   z-index: -20em;
 }
 .login-box {
-  height: 25em;
+  height: 26em;
   width: 50%;
   background-color: rgba(221, 219, 219, 0.8);
   position: fixed;
-  top: 15%;
+  top: 11%;
   left: 25%;
 }
 .flex-login {
